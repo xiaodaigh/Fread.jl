@@ -35,7 +35,7 @@ function pkgs_installed()
 end
 
 fread(path,  feather_out_path = path*".feather"; params...) = begin
-    if !pkgs_installed()
+    if !all(pkgs_installed())
         throw(ErrorException(PKG_NOT_INSTALLED_ERR_MSG))
     end
 
