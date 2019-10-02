@@ -41,3 +41,5 @@ fread(path_to_csv, "path/to/out.feather")
 
 by default the `feather` output path is `path_to_csv*".feather` i.e. with the feather extension attached to the input file.
 
+## Why?
+Because `data.table::fread` is fast! And is often much faster than Julia native solutions.
