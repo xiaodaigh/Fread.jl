@@ -1,6 +1,9 @@
-# Fread
+# Introduction - Fread.jl
 
 This packages allows you to use [R' {data.table}](https://github.com/Rdatatable/data.table)'s excellent `fread` function to read CSVs
+
+## Why?
+Because `data.table::fread` is fast! And is often much faster than native pure-Julia solutions at the moment
 
 ## Installation
 
@@ -48,5 +51,4 @@ fread(path_to_csv, "path/to/out.feather")
 
 by default the `feather` output path is `path_to_csv*".feather` i.e. with the feather extension attached to the input file.
 
-## Why?
-Because `data.table::fread` is fast! And is often much faster than native pure-Julia solutions at the moment
+
