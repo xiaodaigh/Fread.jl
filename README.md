@@ -24,3 +24,20 @@ using Fread
 a = fread(path_to_csv, sep="|", nrows = 50)
 ```
 
+
+## How does it work internally?
+
+The function `fread` does a couple of things
+
+1. Reads the CSV using `data.table::fread`
+2. Saves the `data.frame` in feather format
+3. Loads the feather file into Julia as a DataFrame
+
+Therefore step 2 creates a feather file which you can set the location of by using a 2nd unnamed argument .e.g.
+
+```julia
+fread(path_to_csv, "path/to/out.feather")
+```
+
+by default the `feather` output path is `path_to_csv*".feather` i.e. with the feather extension attached to the input file.
+
