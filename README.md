@@ -27,7 +27,7 @@ a = fread(path_to_csv, sep="|", nrows = 50)
 
 ## How does it work internally?
 
-The function `fread` does a couple of things
+The function `fread` does a few of things
 
 1. Reads the CSV using `data.table::fread`
 2. Saves the `data.frame` in feather format
