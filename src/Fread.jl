@@ -11,15 +11,18 @@ function install_pkgs()
         if(!require(data.table)) {
           install.packages(c("data.table"))
         }
-        if(!require(data.table)) {
-          install.packages(c("data.table"))
+        if(!require(feather)) {
+          install.packages(c("feather"))
         }
     """
+    pkgs_installed()
 end
 
 function pkgs_installed()
     R"""
-        memory.limit(1e10)
+        ml = memory.limit()
+        # TODO better
+        memory.limit(max(ml, ml*2, 2e14))
         datatable_installed <- require(data.table)
         feather_installed <- require(feather)
     """
@@ -35,6 +38,9 @@ fread(path,  feather_out_path = path*".feather"; params...) = begin
 
     @rput params
     R"""
+        ml = memory.limit()
+        # TODO better
+        memory.limit(max(ml, ml*2, 2e14))
         if(!require(data.table)) {
             stop("data.table not installed")
         }
