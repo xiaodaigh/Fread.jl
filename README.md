@@ -9,6 +9,13 @@ using Pkg
 Pkg.add("https://github.com/xiaodaigh/Fread.jl")
 ```
 
+### Install R packages
+You need to make sure you have `{data.table}` and `{feather}` installed in  your R. E.g. in your R session
+
+```r
+install.pacakges(c("data.table", "fread"))
+```
+
 ## Usage
 To use the default parameters of `fread`
 ```julia
