@@ -7,17 +7,6 @@ export fread
 const PKG_NOT_INSTALLED_ERR_MSG = "{data.table} and/or {feather} package(s) not installed\n run 'Fread.install_pkgs()' or install {data.table} and {feather} manually in R using 'install.packages(c('data.table', 'feather'))'"
 
 function install_pkgs(repos = "https://cran.rstudio.com")
-    # R"""
-    #     ml = memory.limit()
-    #     # TODO better
-    #     memory.limit(max(ml, ml*2, 2e14))
-    #     if(!require(data.table)) {
-    #       install.packages("data.table", repos = $repos)
-    #     }
-    #     if(!require(feather)) {
-    #       install.packages("feather", repos = $repos)
-    #     }
-    # """
     run(`R -e "install.packages(c('data.table', 'feather'),repos='$repos')"`)
     pkgs_installed()
 end
