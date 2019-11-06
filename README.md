@@ -13,7 +13,7 @@ Pkg.add("https://github.com/xiaodaigh/Fread.jl")
 You need to make sure you have `{data.table}` and `{feather}` installed in  your R. E.g. in your R session
 
 ```r
-install.pacakges(c("data.table", "feather"))
+install.packages(c("data.table", "feather"))
 ```
 
 ## Usage
