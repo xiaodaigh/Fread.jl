@@ -24,13 +24,21 @@ using Fread
 a = fread(path_to_csv)
 ```
 
-To use customised parameters/arguments, you *must set them by name* using `arg = ` e.g. 
+To use customised parameters/arguments, you *must set them by name* using `arg = ` e.g.
 ```julia
 using Fread
 
 a = fread(path_to_csv, sep="|", nrows = 50)
 ```
 
+## Convert CSVs to feather or parquet
+You can use this package to convert CSVs to feather and parquet files
+```julia
+using Fread
+
+csv_to_feather(path_to_csv, outpath)
+csv_to_parquent(path_to_csv, outpath)
+```
 
 ## How does it work internally?
 
@@ -50,4 +58,3 @@ by default the `feather` output path is `path_to_csv*".feather` i.e. with the fe
 
 ## Why?
 Because `data.table::fread` is fast! And is often much faster than native pure-Julia solutions at the moment
-
