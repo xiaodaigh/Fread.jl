@@ -1,7 +1,7 @@
 name = "Fread"
 uuid = "d4cd8268-698a-43f6-9edf-e88d5ecd117c"
 authors = ["Dai ZJ <zhuojia.dai@gmail.com>"]
-version = "0.1.2"
+version = "0.1.1"
 
 [deps]
 Feather = "becb17da-46f6-5d3c-ad1b-1c5fe96bc73c"
