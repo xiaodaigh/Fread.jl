@@ -2,6 +2,10 @@
 
 This packages allows you to use [R' {data.table}](https://github.com/Rdatatable/data.table)'s excellent `fread` function to read CSVs
 
+## Use [CSV.jl](https://github.com/JuliaData/CSV.jl) instead
+
+You should really be using [CSV.jl](https://github.com/JuliaData/CSV.jl) because it performs quite well. I only use Fread.jl for converting data from parquet to feature etc now and not for reading CSVs as CSV.jl is actually really good. 
+
 ## Installation
 
 ```julia
