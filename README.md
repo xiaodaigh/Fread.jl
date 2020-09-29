@@ -1,10 +1,13 @@
 # Introduction - Fread.jl
 
-This packages allows you to use [R' {data.table}](https://github.com/Rdatatable/data.table)'s excellent `fread` function to read CSVs
+## Convert CSVs to feather or parquet
+You can use this package to convert CSVs to feather and parquet files
+```julia
+using Fread
 
-## Use [CSV.jl](https://github.com/JuliaData/CSV.jl) instead
-
-You should really be using [CSV.jl](https://github.com/JuliaData/CSV.jl) because it performs quite well. I only use Fread.jl for converting data from parquet to feature etc now and not for reading CSVs as CSV.jl is actually really good. 
+csv_to_feather(path_to_csv, outpath)
+csv_to_parquet(path_to_csv, outpath)
+```
 
 ## Installation
 
@@ -20,6 +23,12 @@ You need to make sure you have `{data.table}` and `{feather}` installed in  your
 install.packages(c("data.table", "feather"))
 ```
 
+# Deprecated
+
+## Use [CSV.jl](https://github.com/JuliaData/CSV.jl) instead
+
+You should really be using [CSV.jl](https://github.com/JuliaData/CSV.jl) because it performs quite well. I only use Fread.jl for converting data from parquet to feature etc now and not for reading CSVs as CSV.jl is actually really good. 
+
 ## Usage
 To use the default parameters of `fread`
 ```julia
@@ -33,15 +42,6 @@ To use customised parameters/arguments, you *must set them by name* using `arg =
 using Fread
 
 a = fread(path_to_csv, sep="|", nrows = 50)
-```
-
-## Convert CSVs to feather or parquet
-You can use this package to convert CSVs to feather and parquet files
-```julia
-using Fread
-
-csv_to_feather(path_to_csv, outpath)
-csv_to_parquent(path_to_csv, outpath)
 ```
 
 ## How does it work internally?
